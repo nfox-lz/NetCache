@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NetCacheService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_INetCacheService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INetCacheService_GetValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetValue" />
+  </wsdl:message>
+  <wsdl:message name="INetCacheService_GetValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetCacheService_SetValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetValue" />
+  </wsdl:message>
+  <wsdl:message name="INetCacheService_SetValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetCacheService_Remove_InputMessage">
+    <wsdl:part name="parameters" element="tns:Remove" />
+  </wsdl:message>
+  <wsdl:message name="INetCacheService_Remove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetCacheService_CreateCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCollection" />
+  </wsdl:message>
+  <wsdl:message name="INetCacheService_CreateCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetCacheService_DropCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:DropCollection" />
+  </wsdl:message>
+  <wsdl:message name="INetCacheService_DropCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DropCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetCacheService_CreateDatabase_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDatabase" />
+  </wsdl:message>
+  <wsdl:message name="INetCacheService_CreateDatabase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDatabaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetCacheService_DropDatabase_InputMessage">
+    <wsdl:part name="parameters" element="tns:DropDatabase" />
+  </wsdl:message>
+  <wsdl:message name="INetCacheService_DropDatabase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DropDatabaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetCacheService_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save" />
+  </wsdl:message>
+  <wsdl:message name="INetCacheService_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INetCacheService">
+    <wsdl:operation name="GetValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetCacheService/GetValue" message="tns:INetCacheService_GetValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetCacheService/GetValueResponse" message="tns:INetCacheService_GetValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetCacheService/SetValue" message="tns:INetCacheService_SetValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetCacheService/SetValueResponse" message="tns:INetCacheService_SetValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Remove">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetCacheService/Remove" message="tns:INetCacheService_Remove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetCacheService/RemoveResponse" message="tns:INetCacheService_Remove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCollection">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetCacheService/CreateCollection" message="tns:INetCacheService_CreateCollection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetCacheService/CreateCollectionResponse" message="tns:INetCacheService_CreateCollection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DropCollection">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetCacheService/DropCollection" message="tns:INetCacheService_DropCollection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetCacheService/DropCollectionResponse" message="tns:INetCacheService_DropCollection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDatabase">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetCacheService/CreateDatabase" message="tns:INetCacheService_CreateDatabase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetCacheService/CreateDatabaseResponse" message="tns:INetCacheService_CreateDatabase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DropDatabase">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetCacheService/DropDatabase" message="tns:INetCacheService_DropDatabase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetCacheService/DropDatabaseResponse" message="tns:INetCacheService_DropDatabase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetCacheService/Save" message="tns:INetCacheService_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetCacheService/SaveResponse" message="tns:INetCacheService_Save_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_INetCacheService" type="tns:INetCacheService">
+    <wsp:PolicyReference URI="#NetTcpBinding_INetCacheService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetValue">
+      <soap12:operation soapAction="http://tempuri.org/INetCacheService/GetValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetValue">
+      <soap12:operation soapAction="http://tempuri.org/INetCacheService/SetValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Remove">
+      <soap12:operation soapAction="http://tempuri.org/INetCacheService/Remove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCollection">
+      <soap12:operation soapAction="http://tempuri.org/INetCacheService/CreateCollection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DropCollection">
+      <soap12:operation soapAction="http://tempuri.org/INetCacheService/DropCollection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDatabase">
+      <soap12:operation soapAction="http://tempuri.org/INetCacheService/CreateDatabase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DropDatabase">
+      <soap12:operation soapAction="http://tempuri.org/INetCacheService/DropDatabase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <soap12:operation soapAction="http://tempuri.org/INetCacheService/Save" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NetCacheService">
+    <wsdl:port name="NetTcpBinding_INetCacheService" binding="tns:NetTcpBinding_INetCacheService">
+      <soap12:address location="net.tcp://localhost:8733/Design_Time_Addresses/NetCache/NetCacheService/" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8733/Design_Time_Addresses/NetCache/NetCacheService/</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
